@@ -1,38 +1,421 @@
-.App {
+* {
+  font-family: "Markazi Text", "Karla", serif;
+}
+
+label,
+input,
+select,
+textarea,
+p {
+  font-family: "Karla";
+}
+
+input,
+select,
+option,
+textarea {
+  background-color: #eeeeee;
+  border: none;
+  padding: 5px 5px 5px 5px;
+  border-radius: 0.2rem;
+  resize: none;
+}
+
+input,
+select {
+  width: 10rem;
+}
+
+body {
+  margin: 0; /* removes white border around website*/
+  padding: 0;
+  margin-top: -22px;
+}
+
+menu {
+  list-style: none;
+  display: grid;
+}
+
+button {
+  background-color: white;
+  border: none;
+}
+
+.burgerButton {
+  margin-top: 1.5rem;
+}
+
+a:visited,
+Link:visited,
+a:link,
+Link:link {
+  text-decoration: none;
+  color: black;
+}
+
+.heroButton {
+  background-color: #f4ce14;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 0.2rem;
+  font-family: "Karla";
+  font-size: 2rem;
+}
+
+.heroButton:hover {
+  background-color: #495e57;
+  color: #eeeeee;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #edefee;
+  transition: 0.2s;
+}
+
+.subsection {
+  margin-top: -2rem;
+}
+
+/* navbar styling */
+.navbarMenu {
+  grid-template-columns: repeat(7, 1fr);
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.navbarMenu > li,
+.navbarMenu > a,
+.navbarMenu > Link {
+  text-align: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.mobile {
+  display: none;
+}
+
+.hamburgerMenu {
+  display: none;
+  grid-template-columns: 5fr 1fr;
+}
+
+.navStyling:hover {
+  background-color: #f4ce14;
+  transition: 0.25s;
+}
+
+.navImage {
+  max-height: 4rem;
+  margin-top: 0.7rem;
+  margin-left: -1.25rem;
+}
+
+/* hero */
+.heroArticle {
+  background-color: #495e57;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1.25rem 5rem 1.2rem 5rem;
+  margin-top: -1rem;
+}
+
+.heroText > h1 {
+  font-size: 3rem;
+  margin-top: 0rem;
+  margin-bottom: -3rem;
+}
+
+.heroText > h2 {
+  font-size: 2.5rem;
+}
+
+.heroImage {
+  max-height: 17rem;
+  padding-left: 2rem;
+}
+
+.heroImage > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* specials */
+.specials {
+  padding: 2rem 5rem 0 5rem;
+  animation-duration: 0.33s;
+  animation-timing-function: ease-in-out;
+  animation-name: slideDownFade;
+}
+
+.specialsTopbar {
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.specialsTopbar > h1 {
+  font-size: 2.5rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.specialsCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2vw;
+}
+
+.specialCard {
+  background-color: #edefee;
+  padding-bottom: 1rem;
+}
+
+.specialCard > img {
+  height: 25vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.specialCardText {
+  margin: 0.5rem 2rem 1rem 2rem;
+}
+
+.specialCardText > h1 {
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+.specialCardText > h3 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.specialCardButton {
+  background-color: #f4ce14;
+  border-radius: 0.2rem;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+.specialCardButton:hover {
+  background-color: #495e57;
+  color: #eeeeee;
+  border-style: solid;
+  border-width: 0.1rem;
+  border-color: black;
+  transition: 0.2s;
+}
+
+.specialsCarousel {
+  display: none;
+}
+
+/* testimonials */
+.testimonials {
+  padding: 0 5rem 2rem 5rem;
+  animation-duration: 0.33s;
+  animation-timing-function: ease-in-out;
+  animation-name: slideDownFade;
+}
+
+.testimonialsTopbar > h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin: 4rem 0 1rem 0;
+}
+
+.testimonialsCards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-gap: 2vw;
+  align-items: center;
+}
+
+.testimonialCard {
+  background-color: #edefee;
+  padding: 1rem 1rem 0 1rem;
+}
+
+.testimonialCard > img {
+  height: 25vh;
+  width: 100%;
+  object-fit: contain;
+}
+
+.testimonials-carousel {
+  display: none;
+}
+
+/* about */
+.aboutUs {
+  background-color: #f4ce14;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1.25rem 5rem 2.5rem 5rem;
+  min-height: 22rem;
+  margin-bottom: -1rem;
+  grid-gap: 25vw;
+}
+
+.aboutSubtext {
+  margin-top: -1.5rem;
+}
+
+.doubleImage {
+  max-height: 18rem;
+  position: relative;
+  top: 4rem;
+  left: 2rem;
+}
+
+.doubleImage > img {
+  width: 60%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about1 {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.about2 {
+  position: absolute;
+  top: -3.5rem;
+  left: 5rem;
+}
+
+/* footer */
+footer {
+  min-height: 13rem;
+  background-color: #495e57;
+  color: #ffffff;
+  padding-bottom: 1rem;
+  margin-top: -1.4rem;
+}
+
+footer > menu {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.footerHeader {
+  margin-bottom: -1.25rem;
+}
+
+.footerLinks {
+  padding: 0;
+  list-style: none;
+}
+
+.footerLinks > a,
+.footerLinks > Link,
+.footerLinks > li {
+  text-align: left;
+  display: block;
+  color: white;
+  padding-top: 0.2rem;
+  font-family: "Karla", "Sans Serif";
+}
+
+.footerLinks > a:hover,
+.footerLinks > Link:hover {
+  background-color: #495e57;
+  text-decoration: underline;
+}
+
+.imgFooter {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-content: center;
+}
+
+.imgFooter > img {
+  max-height: 8rem;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin-right: 3rem;
+
+  background-color: white;
+  padding: 0.5rem;
+}
+
+/* reservation form */
+.reserveTable {
+  position: relative;
+  text-align: center;
+  color: white;
+  margin-top: -1.4rem;
+  overflow: hidden;
+}
+
+.headerReserve {
+  width: 100vw; /* width of container */
+  height: 20rem; /* height of container */
+  object-fit: cover;
+}
+
+.reserveHeaderText {
+  background-color: #495e57;
+  padding: 0 3rem 0 3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 25px;
+  border-radius: 0.5rem;
+}
+
+.reservationForm {
+  padding: 2rem 0 0.5rem 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.reservationForm > div {
+  margin-bottom: 1.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.confirmationHeader {
+  position: relative;
+  text-align: center;
   color: white;
+  margin-top: -1.4rem;
+  min-height: 70vh;
 }
 
-.App-link {
-  color: #61dafb;
+.confirmationImage {
+  height: 70vh; /* height of container */
+  width: 100%;
+  object-fit: cover;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.redirectButtons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 12vw;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.redirectButton {
+  background-color: #464646;
+  color: white !important;
+  padding: 2vh 2rem 2vh 2rem;
+  border-radius: 0.5rem;
+  min-width: 12vw;
+  font-family: "Karla";
+  font-size: 18px;
+}
+
+.redirectButton:hover {
+  background-color: #f4ce14;
+  color: #464646 !important;
+  transition: 0.2s;
 }
